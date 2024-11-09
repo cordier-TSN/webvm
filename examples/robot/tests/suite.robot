@@ -1,5 +1,6 @@
-
 *** Settings ***
+resource keywords.robot
+
 
 *** Variables ***
 ${texte}   'Bonjour !'
@@ -8,7 +9,4 @@ ${texte}   'Bonjour !'
 0001 Premier cas de Test
     Afficher la Variable  ${texte} 
 
-*** keywords ***
-Afficher la Variable
-    [Arguments]  ${texte}
-    Log  ${texte}
+
