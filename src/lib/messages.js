@@ -6,7 +6,7 @@ export const introMessage = [
 	"|                                                                             |",
 	"| Bienvenue sur ma WebVM utilisant l'image docker de debian                   |",
 	"|                                                                             |",
-	"| Packages dispo : Python3, vim, nano, gcc, rust, cmake, git ...              |",
+	"| Packages dispo : Python3, vim, nano, gcc, cmake, git ...                    |",
 	"|                                                                             |",
 	"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+",
 	""
