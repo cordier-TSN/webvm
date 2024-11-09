@@ -1,5 +1,5 @@
 *** Settings ***
-resource ../resources/keywords.robot
+resource  common.resource
 
 *** Variables ***
 ${texte}   'Bonjour !'
