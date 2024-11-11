@@ -9,10 +9,12 @@ Afficher la Variable
 
 Lecture du registre
     [Arguments]  ${register} 
-    ${result}=  read  ${register}
-    set test Variable  ${registre}  ${result}
-
+    ${resultat}=  read  ${register}
+    RETURN  ${resultat}[0]
+    
 Ecriture du registre
     [Arguments]  ${registre}  ${valeur}
     Write  ${registre}  ${valeur}
-    
+
+Verifier que ${value} vaut ${expected} 
+    should be equal as integers  ${value}  ${expected}
