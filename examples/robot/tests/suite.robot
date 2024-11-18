@@ -10,7 +10,7 @@ ${texte}   'Bonjour !'
     [Documentation]  test de démo
     [tags]  NonReg  Produit01
     Afficher la Variable  ${texte} 
-    Ecriture du registre  ${2}  ${3}
-    ${result}=  Lecture du registre  ${2}
+    Ecriture du fichier a  3
+    ${result}=  Lecture du fichier
     Afficher la Variable  ${result}
     Verifier que ${result} vaut ${3}

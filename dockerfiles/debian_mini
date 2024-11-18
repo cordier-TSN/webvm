@@ -1,10 +1,11 @@
 FROM debian:bullseye-slim
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
-RUN apt-get -y install vim xterm git cmake gcc python3 sqlite3 zram-tools \
-    libstdc++-10-dev nano python3-setuptools python3-wheel tcpdump apt-utils cron  \
-    python3-numpy python3-pandas python3-six python3-yaml fim
+RUN apt-get -y install vim xterm git cmake gcc python3 sqlite3 zram-tools systemd systemd-sysv tasksel tasksel-data udev sensible-utils sudo \
+    libstdc++-10-dev nano python3-setuptools python3-wheel tcpdump apt-utils cron hexedit  ifupdown init logrotate lsb-base lshw make \
+    python3-numpy python3-pandas python3-six python3-yaml fim xxd iptables isc-dhcp-client isc-dhcp-common kmod less netcat-openbsd whiptail
 RUN useradd -m user -p user -G root
+RUN usermod -a -G sudo user
 COPY --chown=user:user ./examples /home/user/Workspace
 RUN mkdir  /home/user/repo
 RUN chown -R user:user /home/user

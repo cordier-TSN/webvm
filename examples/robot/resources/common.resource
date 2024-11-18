@@ -7,14 +7,13 @@ Afficher la Variable
     [Arguments]  ${texte}
     Log  ${texte}
 
-Lecture du registre
-    [Arguments]  ${register} 
-    ${resultat}=  read  ${register}
-    RETURN  ${resultat}[0]
+Lecture du fichier
+    ${resultat}=  read
+    RETURN  ${resultat}
     
-Ecriture du registre
-    [Arguments]  ${registre}  ${valeur}
-    Write  ${registre}  ${valeur}
+Ecriture du fichier a
+    [Arguments]   ${valeur}
+    Write  ${valeur}
 
 Verifier que ${value} vaut ${expected} 
     should be equal as integers  ${value}  ${expected}
