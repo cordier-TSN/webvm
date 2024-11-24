@@ -15,4 +15,11 @@ Ecriture du fichier a
     write  ${valeur}
 
 Verifier que ${value} vaut ${expected} 
-    should be equal as integers  ${value}  ${expected}
+    should be equal  ${value}  ${expected}
+
+
+creation erreur
+    Run keyword if  '${isok}' =='False'   genere erreur
+    
+genere erreur    
+    run keyword and expect error  *  Log  'test'

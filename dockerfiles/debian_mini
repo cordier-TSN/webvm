@@ -2,11 +2,11 @@ FROM debian:bullseye-20241111-slim
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
 RUN apt-get -y install vim xterm git build-essential python3 sqlite3 zram-tools systemd systemd-sysv \
-    nano python3-setuptools python3-wheel apt-utils cron init logrotate make \
+    nano python3-setuptools python3-wheel apt-utils cron init logrotate make cmake \
     python3-numpy python3-pandas python3-six python3-yaml python3-matplotlib tk fim
 RUN useradd -m user
 RUN usermod -a -G root user
-COPY --chown=user:root ./examples /home/user/Workspace
+COPY --chown=user:user ./examples /home/user/Workspace
 RUN mkdir  /home/user/repo
 WORKDIR /home/user/
 # We set env, as this gets extracted by Webvm. This is optional.
@@ -16,4 +16,6 @@ RUN python3 --version
 RUN vim --version
 RUN git --version
 RUN sh /home/user/Workspace/python3/prepare_env.sh
+RUN chmod 777 -Rf /home/user/
+RUN chown user:user -Rf /home/user/
 CMD [ "/bin/bash" ]
