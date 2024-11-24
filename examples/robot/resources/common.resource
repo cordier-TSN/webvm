@@ -12,7 +12,7 @@ Lecture du fichier
     
 Ecriture du fichier a
     [Arguments]   ${valeur}
-    Write  ${valeur}
+    write  ${valeur}
 
 Verifier que ${value} vaut ${expected} 
     should be equal as integers  ${value}  ${expected}
