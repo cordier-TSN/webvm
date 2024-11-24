@@ -5,7 +5,6 @@ RUN apt-get -y install vim xterm git build-essential python3 sqlite3 zram-tools 
     nano python3-setuptools python3-wheel tcpdump apt-utils cron init logrotate make \
     python3-numpy python3-pandas python3-six python3-yaml python3-matplotlib tk fim
 COPY ./examples /home/root/Workspace
-RUN useradd -m root -p root -G root
 RUN mkdir  /home/root/repo
 WORKDIR /home/root/
 # We set env, as this gets extracted by Webvm. This is optional.

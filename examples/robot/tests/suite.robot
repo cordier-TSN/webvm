@@ -1,5 +1,5 @@
 *** Settings ***
-resource  ../resources/common.resource
+resource  common.resource
 
 
 *** Variables ***
@@ -10,7 +10,7 @@ ${texte}   'Bonjour !'
     [Documentation]  test de démo
     [tags]  NonReg  Produit01
     Afficher la Variable  ${texte} 
-    Ecriture du fichier a  3
+    Ecriture du fichier a  ${texte}
     ${result}=  Lecture du fichier
     Afficher la Variable  ${result}
-    Verifier que ${result} vaut ${3}
+    Verifier que ${result} vaut ${texte}

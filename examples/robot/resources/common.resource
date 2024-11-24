@@ -1,6 +1,5 @@
 *** Settings ***
-Library  ../libraries/Modbus.py  
-
+Library  myLibFile.py  
 
 *** keywords ***
 Afficher la Variable
