@@ -1,0 +1,53 @@
+==============================================================================
+2024-11-12 22:20:43.815953 - INFO - + START SUITE: Tests
+==============================================================================
+2024-11-12 22:20:43.941303 - INFO - +- START SUITE: Tests.Suite
+==============================================================================
+2024-11-12 22:20:43.973412 - INFO - +-- START TEST: 0001 Premier cas de Test
+------------------------------------------------------------------------------
+2024-11-12 22:20:43.978679 - INFO - +--- START KEYWORD: common.Afficher la Variable [ ${texte} ]
+2024-11-12 22:20:43.984278 - INFO - +---- START KEYWORD: BuiltIn.Log [ ${texte} ]
+2024-11-12 22:20:43.985010 - INFO - 'Bonjour !'
+2024-11-12 22:20:43.985791 - INFO - +---- END KEYWORD: BuiltIn.Log (0.001513 s)
+2024-11-12 22:20:43.986208 - INFO - +--- END KEYWORD: common.Afficher la Variable (0.007529 s)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2024-11-12 22:20:43.989092 - INFO - +--- START KEYWORD: common.Ecriture du fichier a [ 3 ]
+2024-11-12 22:20:43.991034 - INFO - +---- START KEYWORD: Modbus.Write [ ${valeur} ]
+2024-11-12 22:20:43.992411 - INFO - +---- END KEYWORD: Modbus.Write (0.001377 s)
+2024-11-12 22:20:43.993335 - INFO - +--- END KEYWORD: common.Ecriture du fichier a (0.004243 s)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2024-11-12 22:20:44.000306 - INFO - +--- START KEYWORD: common.Lecture du fichier [ ]
+2024-11-12 22:20:44.001218 - INFO - +---- START KEYWORD: Modbus.Read [ ]
+2024-11-12 22:20:44.012369 - INFO - ${resultat} =
+2024-11-12 22:20:44.012559 - INFO - +---- END KEYWORD: Modbus.Read (0.011341 s)
+2024-11-12 22:20:44.012779 - INFO - +---- START RETURN:
+2024-11-12 22:20:44.012948 - INFO - +---- END RETURN:  (0.000169 s)
+2024-11-12 22:20:44.013402 - INFO - ${result} =
+2024-11-12 22:20:44.013514 - INFO - +--- END KEYWORD: common.Lecture du fichier (0.013208 s)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2024-11-12 22:20:44.017160 - INFO - +--- START KEYWORD: common.Afficher la Variable [ ${result} ]
+2024-11-12 22:20:44.027415 - INFO - +---- START KEYWORD: BuiltIn.Log [ ${texte} ]
+2024-11-12 22:20:44.028054 - INFO -
+2024-11-12 22:20:44.031966 - INFO - +---- END KEYWORD: BuiltIn.Log (0.004551 s)
+2024-11-12 22:20:44.034092 - INFO - +--- END KEYWORD: common.Afficher la Variable (0.016932 s)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2024-11-12 22:20:44.035510 - INFO - +--- START KEYWORD: common.Verifier que ${result} vaut ${3} [ ]
+2024-11-12 22:20:44.044405 - INFO - +---- START KEYWORD: BuiltIn.Should Be Equal As Integers [ ${value} | ${expected} ]
+2024-11-12 22:20:44.045541 - INFO - Argument types are:
+<class 'str'>
+<class 'int'>
+2024-11-12 22:20:44.046074 - FAIL - '' cannot be converted to an integer: ValueError: invalid literal for int() with base 10: ''
+2024-11-12 22:20:44.048795 - DEBUG - ValueError: invalid literal for int() with base 10: ''
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: '' cannot be converted to an integer: ValueError: invalid literal for int() with base 10: ''
+2024-11-12 22:20:44.050758 - INFO - +---- END KEYWORD: BuiltIn.Should Be Equal As Integers (0.006353 s)
+2024-11-12 22:20:44.051507 - INFO - +--- END KEYWORD: common.Verifier que ${result} vaut ${3} (0.015997 s)
+------------------------------------------------------------------------------
+2024-11-12 22:20:44.056720 - INFO - +-- END TEST: 0001 Premier cas de Test (0.083308 s)
+------------------------------------------------------------------------------
+2024-11-12 22:20:44.062906 - INFO - +- END SUITE: Tests.Suite (0.121603 s)
+==============================================================================
+2024-11-12 22:20:44.090600 - INFO - + END SUITE: Tests (0.274647 s)
+==============================================================================
