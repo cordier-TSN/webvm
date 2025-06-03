@@ -1,24 +1,18 @@
-FROM danielguerra/alpine-xfce4-xrdp
-#ARG DEBIAN_FRONTEND=noninteractive
-#RUN apt-get clean && apt-get update && apt-get -y upgrade
-#RUN apt-get -y install apt-utils build-essential \
-#	python3-pip cron net-tools iputils-ping netbase ifupdown \
-#	fakeroot dbus base whiptail hexedit init \
-#	patch wamerican ucf manpages \
-#	file make dialog curl vim nano \
-#	less netcat-openbsd
-# RUN pip3 install robotframework robotframework-seleniumlibrary
-#RUN pip3 install robotframework
-# RUN curl -fsSL https://get.docker.com -o get-docker.sh
-# RUN sh get-docker.sh
-# RUN docker pull ubuntu
-RUN useradd -m user && echo "user:password" | chpasswd
-#RUN /usr/sbin/usermod -aG root user
-COPY --chown=user:user ./examples /home/user/Workspace
-#RUN chmod 777 -R /home/user
+FROM i386/alpine
+RUN apk upgrade 
+RUN apk add python3 py3-pip vim bash nano git xvfb fvwm
+# xorg-server openrc icewm xfce4-terminal lightdm-gtk-greeter
+# xf86-input-mouse xf86-input-keyboard xf86-video-vesa
+# RUN apk add xfce4 xfce4-terminal lightdm-gtk-greeter font-dejavu xfce4-screensaver
+RUN pip3 install robotframework --break-system-packages 
+# RUN pip3 install robotframework
+RUN adduser user -D user
+COPY ./examples /home/user/Workspace
+RUN chmod 777 -R /home/user
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
-#WORKDIR /home/user/
+WORKDIR /home/user/
+USER user
 # We set env, as this gets extracted by Webvm. This is optional.
-#ENV HOME="/home/user" TERM="xterm" USER="user" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
-#RUN echo 'root:password' | chpasswd
-#CMD [ "/bin/bash" ]
+ENV HOME="/home/user/" TERM="xterm" USER="root" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
+# CMD [ "/usr/bin/python3", "-m robot --version"]
+CMD [ "/bin/bash", "/home/user/Workspace/robot/prepare.sh" ]
