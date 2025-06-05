@@ -1,4 +1,4 @@
-FROM i386/alpine
+FROM alpine
 RUN apk upgrade 
 RUN apk add python3 py3-pip vim bash nano git
 # xorg-server openrc icewm xfce4-terminal lightdm-gtk-greeter
