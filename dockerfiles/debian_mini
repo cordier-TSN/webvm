@@ -1,11 +1,8 @@
 FROM alpine
 RUN apk upgrade 
 RUN apk add python3 py3-pip vim bash nano git
-# xorg-server openrc icewm xfce4-terminal lightdm-gtk-greeter
-# xf86-input-mouse xf86-input-keyboard xf86-video-vesa
-# RUN apk add xfce4 xfce4-terminal lightdm-gtk-greeter font-dejavu xfce4-screensaver
 RUN pip3 install robotframework --break-system-packages 
-# RUN pip3 install robotframework
+RUN /usr/sbin/crond -f -l 2
 RUN adduser user -D user
 COPY ./examples /home/user/Workspace
 RUN chmod 777 -R /home/user
