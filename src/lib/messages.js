@@ -2,12 +2,6 @@ const color= "\x1b[1;35m";
 const underline= "\x1b[94;4m";
 const normal= "\x1b[0m";
 export const introMessage = [
-	"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+",
-	"|                                                                             |",
-	"| WebVM is a virtual Linux environment running in the browser via WebAssembly |",
-	"|                                                                             |",
-	"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+",
-	"",
 	""
 ];
 export const errorMessage = [
