@@ -2,7 +2,7 @@ FROM alpine
 RUN apk upgrade 
 RUN apk add python3 py3-pip vim bash nano git
 RUN pip3 install robotframework --break-system-packages 
-RUN /usr/sbin/crond -f -l 2
+RUN /usr/sbin/crond -f
 RUN adduser user -D user
 COPY ./examples /home/user/Workspace
 RUN chmod 777 -R /home/user
