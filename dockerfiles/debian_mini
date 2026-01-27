@@ -1,4 +1,4 @@
-FROM i386/alpine:3.18
+FROM i386/alpine:3.20
 RUN apk upgrade 
 RUN apk add python3 py3-pip vim bash nano git links
 RUN pip3 install robotframework --break-system-packages
@@ -10,5 +10,4 @@ WORKDIR /home/user/
 USER user
 # We set env, as this gets extracted by Webvm. This is optional.
 ENV HOME="/home/user/" TERM="xterm" USER="root" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
-CMD [ "robot --version"]
 CMD [ "/bin/bash" ]
