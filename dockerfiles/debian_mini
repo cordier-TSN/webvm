@@ -1,4 +1,4 @@
-FROM --platform=i386 i386/alpine:3.12
+FROM --platform=i386 i386/alpine:3.10
 RUN apk upgrade 
 RUN apk add python3 py3-pip vim bash nano git
 RUN pip3 install robotframework
