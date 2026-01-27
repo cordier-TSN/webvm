@@ -1,6 +1,6 @@
 FROM i386/alpine:3.18
 RUN apk upgrade 
-RUN apk add python3 py3-pip vim bash nano git links lynx openjdk8-jdk
+RUN apk add python3 py3-pip vim bash nano git links
 RUN pip3 install robotframework --break-system-packages
 RUN adduser user -D user
 COPY ./examples /home/user/Workspace
