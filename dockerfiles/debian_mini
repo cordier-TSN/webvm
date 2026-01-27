@@ -1,4 +1,4 @@
-FROM --platform=i386 i386/alpine:3.20
+FROM --platform=i386 i386/alpine:3.18
 RUN apk upgrade 
 RUN apk add python3 py3-pip vim bash nano git links lynx openjdk21-jre
 RUN pip3 install robotframework --break-system-packages
