@@ -1,0 +1,4 @@
+*** Test Cases ***;${username};${password};[Documentation];[Tags]
+login:demo mot de passe:vide;demo;${EMPTY}; doc test cas 1;exig_001
+login:toto mot de passe:1234;toto;${1234}; doc test cas 2;exig_002
+login:vide mot de passe:vide;${EMPTY};${EMPTY}; doc test cas 1;exig_001
