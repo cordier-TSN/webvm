@@ -21,4 +21,4 @@ Log with User and Password
    append to list   ${test}    ${value}
    append to list   ${test}    bla bla
    append to list   ${test}    exig_${value}
-   run keyword if  '${username}'=='${EMPTY}'   append to csv file    data_driver.csv   ${test}   delimiter=;
+   run keyword if  '${username}'=='${EMPTY}'   append to csv file    /home/user/Workspace/robot/tests/data_driver.csv   ${test}   delimiter=;
