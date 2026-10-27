@@ -151,7 +151,7 @@ jobs:
          # Preallocate space for the ext2 image
          sudo fallocate -l $IMAGE_SIZE ${IMAGE_NAME}
          # Format to ext2 linux kernel revision 0
-         sudo mkfs.ext2 -r 0 ${IMAGE_NAME}
+         sudo mkfs.ext2 ${IMAGE_NAME}
          # Mount the ext2 image to modify it
          sudo mount -o loop -t ext2 ${IMAGE_NAME} /mnt/
 
