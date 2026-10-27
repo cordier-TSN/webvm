@@ -1,7 +1,9 @@
 FROM i386/alpine:3.20
 RUN apk upgrade 
 RUN apk add python3 py3-pip vim bash nano git links
-RUN pip3 install robotframework robotframework-datadriver robotframework-csvlibrary --break-system-packages
+RUN pip3 install robotframework  --break-system-packages
+RUN pip3 install robotframework-datadriver  --break-system-packages
+RUN pip3 install robotframework-csvlibrary  --break-system-packages
 RUN adduser user -D user
 COPY ./examples /home/user/Workspace
 RUN chmod 777 -R /home/user
